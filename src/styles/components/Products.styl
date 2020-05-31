@@ -1,15 +1,18 @@
 .Products
+  margin 150px 0 0 0
   &-items
-    grid-template-columns repeat(3, 1fr)
+    grid-template-columns 100%
     grid-gap 1.5rem
     grid-row-ga 1.5em
     display grid
   &-item
     text-decoration none
     box-shadow 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03)
-    border-radiu 5px
+    border-radius 5px
     margin 0 0 20px 0
     position relative
+    grid-template-columns  repeat(2, minmax(40%, 60%))
+    display grid
     &-info
       padding 10px
       h2
@@ -30,13 +33,23 @@
     button
       width 100%
       padding 10px
-      border-radius 0px 0px 5px 5px
+      border-radius 5px
       border 0px
       outline 0
       cursor pointer
       font-size 14px
       font-weight 300
+      background-color $button-color
       &:hover
         background-color rgba(39,44,49,.06)
 
-
+@media only screen and (min-width 600px) and (max-width 1200px) 
+  .Products
+    &-items
+      grid-template-columns  repeat(2, minmax($width-gallery, $width-gallery-medium))
+      grid-template-rows  repeat(2, minmax($height-gallery, $height-gallery-medium))
+      grid-row-ga 4.5em
+@media only screen and (min-width 1200px) 
+  .Products
+    &-items
+      grid-template-columns repeat(3, 1fr)

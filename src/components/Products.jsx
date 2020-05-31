@@ -25,8 +25,8 @@ const Products = (props) => {
                 </span>
               </h2>
               <p>{product.description}</p>
+              <button type="button" onClick={() => handleAddToCart(product)}>Agregar al carrito</button>
             </div>
-            <button type="button" onClick={() => handleAddToCart(product)}>Comprar</button>
           </div>
         ))}
       </div>

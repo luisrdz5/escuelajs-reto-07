@@ -14,6 +14,16 @@ const reducer = (state, action) => {
           ...state,
           cart: state.cart.filter((items) => items.key !== action.payload)
         }
+      case 'LOGIN_REQUEST':
+        return {
+          ...state,
+          user: action.payload,
+        };
+      case 'LOGOUT_REQUEST':
+        return {
+          ...state,
+          user: action.payload,
+        };
     default:
       return state;
   }

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../styles/components/Header.styl';
-import '../styles/components/Variables.styl';
 
 import avatarGrey from '../assets/images/avatar-grey.png';
 import flag from '../assets/images/flag.png';
@@ -10,11 +9,14 @@ import searchIcon from '../assets/images/search-icon.png';
 import logo from '../assets/images/logo.png';
 import shoppingCart from '../assets/images/logo_shopping_cart.png';
 
-const Header = (props) => (
+const Header = (props) => {
+  
+  
+  return (
   <div className="Header">
     <div className="Header__principal">
       <div className="Header__principal__toggle"> 
-        <label for="toggle"> &#9776;</label>
+        <label htmlFor="toggle"> &#9776;</label>
         <input type="checkbox" id="toggle" />
         <menu className="Header__menu" id="Header__menu">
           <div className="Header__menu--container">
@@ -54,7 +56,9 @@ const Header = (props) => (
             </div>
           </li>
           <div className="Header__menu--session">
-            <input type="button" className="text" value="Iniciar sesión" /> 
+            <Link to="/login">
+              <input type="button" className="text" value="Iniciar sesión" />
+            </Link>
           </div>
           <div className="Header__menu--exit">
             <input type="button" className="text" value="Salir" /> 
@@ -80,7 +84,7 @@ const Header = (props) => (
       <input type="text" name="search" results="5" name="search" placeholder="Buscar" />
     </div>
   </div>
-);
+)};
 
 const mapStateToProps = state => {
   return {

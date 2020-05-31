@@ -16,12 +16,13 @@
     &-info
       padding 10px
       h2
-        font-size 18px
+        font-size 14px
         font-weight bold
         display flex
         justify-content space-between
         span
-          color #33b13a
+          font-size 14px
+          color $button-color
       p
         font-size 14px
         font-weight 300
@@ -43,6 +44,14 @@
       &:hover
         background-color rgba(39,44,49,.06)
 
+@media only screen and (min-width 400px) and (max-width 599px) 
+  .Products
+    &-item-info
+      h2
+        font-size 18px
+        span
+          font-size 18px
+          color $button-color
 @media only screen and (min-width 600px) and (max-width 1200px) 
   .Products
     &-items
